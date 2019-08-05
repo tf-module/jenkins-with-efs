@@ -5,25 +5,25 @@ resource "aws_security_group" "sg_jenkins_instance" {
   vpc_id      = aws_vpc.cicd_vpc.id
   ingress {
     cidr_blocks = ["0.0.0.0/0"]
-    description = "Jenkins Agent Discover"
-    from_port   = 50000
-    protocol    = "tcp"
-    to_port     = 50000
-  }
-  ingress {
-    cidr_blocks = ["0.0.0.0/0"]
     description = "Jenkins Website Port"
     from_port   = 80
     protocol    = "tcp"
     to_port     = 80
   }
-  ingress {
-    cidr_blocks = ["0.0.0.0/0"]
-    description = "SSH"
-    from_port   = 22
-    protocol    = "tcp"
-    to_port     = 22
-  }
+  # ingress {
+  #   cidr_blocks = ["0.0.0.0/0"]
+  #   description = "SSH"
+  #   from_port   = 22
+  #   protocol    = "tcp"
+  #   to_port     = 22
+  # }
+  # ingress {
+  #   cidr_blocks = ["0.0.0.0/0"]
+  #   description = "Jenkins Agent Discover"
+  #   from_port   = 50000
+  #   protocol    = "tcp"
+  #   to_port     = 50000
+  # }
   egress {
     from_port   = 0
     to_port     = 0

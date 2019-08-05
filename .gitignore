@@ -7,5 +7,6 @@
 # Module directory
 .terraform/
 .history
+.DS_Store
 
 
