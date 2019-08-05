@@ -21,7 +21,7 @@ resource "aws_route53_record" "jenkins_efs_private_dns" {
 resource "aws_route53_record" "jenkins_public_dns" {
   zone_id = data.aws_route53_zone.public_zone.zone_id
   name    = "jenkins"
-  ttl     = 60
+  ttl     = 30
   type    = "CNAME"
-  records = [aws_instance.jenkins_instance.public_dns]
+  records = [aws_instance.jenkins_instance.public_ip]
 }
